@@ -1,35 +1,35 @@
 import { useState, useEffect } from 'react';
 
-const initialFormValues = { name: '' };
+const initialFormValues = { taskTitle: '' };
 
-function Form({ addTodos, todos }) {
+function Form({ addtasks, tasks }) {
     const [form, setForm] = useState(initialFormValues);
 
     const onChangeInput = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
+        setForm({ ...form, [e.target.taskTitle]: e.target.value });
     };
 
 
     const onSubmit = (e) => {
         // console.log(form);
         e.preventDefault();
-        if (form.name === '') {
+        if (form.taskTitle === '' && form.taskId === '') {
             return false;
         }
-        addTodos([...todos, form]);
+        addtasks([...tasks, form]);
     }
     return (
 
         <form onSubmit={onSubmit}>
 
-            <input className='new-todo'
+            <input classtaskTitle='new-todo'
                 placeholder='What needs to be done?'
-                name='todos'
-                value={form.todos}
+                taskTitle='tasks'
+                value={form.tasks}
                 onChange={onChangeInput} />
 
         </form>
     )
 };
 
-export default Form
+export default Form;

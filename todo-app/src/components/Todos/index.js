@@ -6,14 +6,17 @@ function Tasks() {
     const [tasks, setTasks] = useState([
         {
             taskTitle: 'Learn Javascript',
+            taskId: '1'
 
         },
         {
             taskTitle: 'Learn React',
+            taskId: '2'
         },
 
         {
             TaskTitle: 'Have a life!',
+            taskId: '3'
 
         }
     ]

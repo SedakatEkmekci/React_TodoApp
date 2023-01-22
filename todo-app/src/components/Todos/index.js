@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Form from './Form';
+import List from './List'
 
 function Todos() {
     const [todos, setTodos] = useState(
@@ -16,11 +17,16 @@ function Todos() {
 
         });
 
+    useEffect(() => {
+        console.log(todos);
+    }, [todos]);
+
     return (
         <div className='todoapp'>
             <div className='header'>
                 <h1>Todos</h1>
-                <Form />
+                {/* <List todos={todos}></List> */}
+                <Form addTodos={setTodos} todos={todos}></Form>
             </div>
 
 

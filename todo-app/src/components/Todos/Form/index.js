@@ -9,24 +9,26 @@ function Form({ addTodos, todos }) {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const onSubmit = (e) => {
-        e.preventDefault();
 
+    const onSubmit = (e) => {
+        // console.log(form);
+        e.preventDefault();
         if (form.todo === '') {
             return false;
         }
         addTodos([...todos, form]);
     }
     return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <input className='new-todo'
-                    placeholder='What needs to be done?'
-                    name='todos'
-                    value={form.todos}
-                    onChange={onChangeInput} />
-            </form>
-        </div>
+
+        <form onSubmit={onSubmit}>
+
+            <input className='new-todo'
+                placeholder='What needs to be done?'
+                name='todos'
+                value={form.todos}
+                onChange={onChangeInput} />
+
+        </form>
     )
 };
 

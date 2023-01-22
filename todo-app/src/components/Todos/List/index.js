@@ -15,7 +15,7 @@ function List({ tasks }) {
                         <li key={i}>
                             <div className='completed'>
                                 <input className='toggle' type='checkbox' />
-                                <span>{task.name}</span>
+                                <span>{task.taskTitle}</span>
 
                             </div>
 

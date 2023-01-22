@@ -13,12 +13,6 @@ function Tasks() {
             taskTitle: 'Learn React',
             taskId: '2'
         },
-
-        {
-            TaskTitle: 'Have a life!',
-            taskId: '3'
-
-        }
     ]
     );
 
@@ -33,7 +27,7 @@ function Tasks() {
             <div className='header'>
                 <h1>Todos</h1>
 
-                <Form addTodos={setTodos} tasks={tasks}></Form>
+                <Form addTasks={setTasks} tasks={tasks}></Form>
                 <List tasks={tasks}></List>
 
             </div>

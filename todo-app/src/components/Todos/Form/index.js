@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const initialFormValues = { taskTitle: '' };
 
-function Form({ addtasks, tasks }) {
+function Form({ addTasks, tasks }) {
     const [form, setForm] = useState(initialFormValues);
 
     const onChangeInput = (e) => {
@@ -16,7 +16,7 @@ function Form({ addtasks, tasks }) {
         if (form.taskTitle === '' && form.taskId === '') {
             return false;
         }
-        addtasks([...tasks, form]);
+        addTasks([...tasks, form]);
     }
     return (
 

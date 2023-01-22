@@ -3,19 +3,23 @@ import Form from './Form';
 import List from './List'
 
 function Todos() {
-    const [todos, setTodos] = useState(
+    const [todos, setTodos] = useState([
         {
-            todo: 'Learn Javascript',
+            name: 'Learn Javascript',
 
         },
         {
-            todo: 'Learn React',
+            name: 'Learn React',
         },
 
         {
-            todo: 'Have a life!',
+            name: 'Have a life!',
 
-        });
+        }
+    ]
+    );
+
+
 
     useEffect(() => {
         console.log(todos);
@@ -25,8 +29,10 @@ function Todos() {
         <div className='todoapp'>
             <div className='header'>
                 <h1>Todos</h1>
-                {/* <List todos={todos}></List> */}
+
                 <Form addTodos={setTodos} todos={todos}></Form>
+                <List todos={todos}></List>
+
             </div>
 
 

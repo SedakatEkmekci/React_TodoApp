@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const initialFormValues = { todo: '' };
+const initialFormValues = { name: '' };
 
 function Form({ addTodos, todos }) {
     const [form, setForm] = useState(initialFormValues);
@@ -13,7 +13,7 @@ function Form({ addTodos, todos }) {
     const onSubmit = (e) => {
         // console.log(form);
         e.preventDefault();
-        if (form.todo === '') {
+        if (form.name === '') {
             return false;
         }
         addTodos([...todos, form]);

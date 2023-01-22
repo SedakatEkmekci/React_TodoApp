@@ -14,12 +14,6 @@ function Tasks() {
             taskTitle: 'Learn React',
             taskStatus: 'completed'
         },
-
-        {
-            TaskTitle: 'Have a life!',
-            taskStatus: 'processing'
-
-        }
     ]
     );
 

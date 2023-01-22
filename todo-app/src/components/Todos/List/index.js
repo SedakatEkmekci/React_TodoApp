@@ -11,9 +11,10 @@ function List({ tasks, setTasks }) {
 
             <ul className='todo-list'>
                 {
-                    tasks.map((task, i) => (
+                    tasks.map((tasks, i) => (
                         <li key={i}>
-
+                            <span>{tasks.taskTitle}</span>
+                            <span>{tasks.taskStatus}</span>
 
                         </li>
 

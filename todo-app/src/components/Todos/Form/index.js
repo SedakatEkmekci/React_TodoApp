@@ -11,7 +11,7 @@ function Form({ addTasks, tasks }) {
 
 
     const onSubmit = (e) => {
-        // console.log(form);
+        console.log(form);
         e.preventDefault();
         if (form.taskTitle === '') {
             return false;

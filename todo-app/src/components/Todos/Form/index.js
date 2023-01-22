@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 
 const initialFormValues = { taskTitle: '' };
 
-function Form({ addtasks, tasks }) {
+function Form({ addTasks, tasks }) {
     const [form, setForm] = useState(initialFormValues);
 
     const onChangeInput = (e) => {
-        setForm({ ...form, [e.target.taskTitle]: e.target.value });
+        setForm({ ...form, [e.target.name]: e.target.value });
     };
 
 
@@ -16,18 +16,18 @@ function Form({ addtasks, tasks }) {
         if (form.taskTitle === '') {
             return false;
         }
-        addtasks([...tasks, form]);
-    }
+        addTasks([...tasks, form]);
+    };
     return (
-
         <form onSubmit={onSubmit}>
+            <div>
+                <input className='new-todo'
+                    name='taskTitle'
+                    placeholder='What needs to be done?'
+                    value={form.taskTitle}
+                    onChange={onChangeInput} />
 
-            <input classtaskTitle='new-todo'
-                placeholder='What needs to be done?'
-                taskTitle='tasks'
-                value={form.tasks}
-                onChange={onChangeInput} />
-
+            </div>
 
         </form>
     )

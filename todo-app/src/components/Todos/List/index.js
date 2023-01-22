@@ -13,26 +13,12 @@ function List({ tasks, setTasks }) {
                 {
                     tasks.map((task, i) => (
                         <li key={i}>
-<<<<<<< HEAD
-    <div className='completed' >
 
-=======
-                            <div className='completed'>
-<<<<<<< HEAD
->>>>>>> parent of 909a8a2 (update)
-            <input className='toggle' type='checkbox' />
-            <span>{task.name}</span>
-=======
-                                <input className='toggle' type='checkbox' />
-                                <span>{task.name}</span>
->>>>>>> parent of d6ed63e (update)
 
-        </div>
-
-    </li>
+                        </li>
 
                     ))
-}
+                }
 
             </ul >
         </div >
@@ -40,5 +26,4 @@ function List({ tasks, setTasks }) {
 }
 
 export default List;
-
 

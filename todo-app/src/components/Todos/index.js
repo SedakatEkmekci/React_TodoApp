@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import Form from './Form';
 import List from './List'
@@ -32,7 +33,7 @@ function Tasks() {
             <div className='header'>
                 <h1>Todos</h1>
 
-                <Form addTodos={setTodos} tasks={tasks}></Form>
+                <Form addTodos={setTasks} tasks={tasks}></Form>
                 <List tasks={tasks}></List>
 
             </div>

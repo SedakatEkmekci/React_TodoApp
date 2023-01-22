@@ -2,18 +2,18 @@ import { useEffect, useState } from 'react';
 import Form from './Form';
 import List from './List'
 
-function Todos() {
-    const [todos, setTodos] = useState([
+function Tasks() {
+    const [tasks, setTasks] = useState([
         {
-            name: 'Learn Javascript',
+            taskTitle: 'Learn Javascript',
 
         },
         {
-            name: 'Learn React',
+            taskTitle: 'Learn React',
         },
 
         {
-            name: 'Have a life!',
+            TaskTitle: 'Have a life!',
 
         }
     ]
@@ -22,16 +22,16 @@ function Todos() {
 
 
     useEffect(() => {
-        console.log(todos);
-    }, [todos]);
+        console.log(tasks);
+    }, [tasks]);
 
     return (
         <div className='todoapp'>
             <div className='header'>
                 <h1>Todos</h1>
 
-                <Form addTodos={setTodos} todos={todos}></Form>
-                <List todos={todos}></List>
+                <Form addTodos={setTodos} tasks={tasks}></Form>
+                <List tasks={tasks}></List>
 
             </div>
 
@@ -41,4 +41,4 @@ function Todos() {
     )
 }
 
-export default Todos;
+export default Tasks;

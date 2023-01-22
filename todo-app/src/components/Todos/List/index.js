@@ -2,12 +2,13 @@ import { useState } from 'react';
 
 
 function List({ todos }) {
+    const [filterText, setFilterText] = useState('');
+
     return (
         <div className='main'>
-            <input className='toggle-all' type='checkbox' />
-            <label htmlFor="toggle-all">
-                Mark all as complete
-            </label>
+            <input className='toggle-all' type='checkbox' value={ } />
+            <label htmlFor="toggle-all">Mark all as completed</label>
+
             <ul className='todo-list'>
                 {
                     todos.map((todo, i) => (

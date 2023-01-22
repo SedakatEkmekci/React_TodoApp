@@ -7,17 +7,17 @@ function Tasks() {
     const [tasks, setTasks] = useState([
         {
             taskTitle: 'Learn Javascript',
-            taskId: '1'
+            taskStatus: 'processing'
 
         },
         {
             taskTitle: 'Learn React',
-            taskId: '2'
+            taskStatus: 'completed'
         },
 
         {
             TaskTitle: 'Have a life!',
-            taskId: '3'
+            taskStatus: 'processing'
 
         }
     ]

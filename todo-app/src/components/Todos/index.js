@@ -6,13 +6,19 @@ function Tasks() {
     const [tasks, setTasks] = useState([
         {
             taskTitle: 'Learn Javascript',
-            taskStatus: 'processing'
+            taskId: '1'
 
         },
         {
             taskTitle: 'Learn React',
-            taskStatus: 'completed'
+            taskId: '2'
         },
+
+        {
+            TaskTitle: 'Have a life!',
+            taskId: '3'
+
+        }
     ]
     );
 
@@ -26,7 +32,7 @@ function Tasks() {
             <div className='header'>
                 <h1>Todos</h1>
 
-                <Form addTasks={setTasks} tasks={tasks}></Form>
+                <Form addTodos={setTodos} tasks={tasks}></Form>
                 <List tasks={tasks}></List>
 
             </div>

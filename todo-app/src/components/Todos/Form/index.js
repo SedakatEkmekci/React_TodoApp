@@ -13,7 +13,7 @@ function Form({ addTasks, tasks }) {
     const onSubmit = (e) => {
         // console.log(form);
         e.preventDefault();
-        if (form.taskTitle === '' && form.taskId === '') {
+        if (form.taskTitle === '') {
             return false;
         }
         addTasks([...tasks, form]);
@@ -27,6 +27,7 @@ function Form({ addTasks, tasks }) {
                 taskTitle='tasks'
                 value={form.tasks}
                 onChange={onChangeInput} />
+
 
         </form>
     )

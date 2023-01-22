@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 
-function List({ tasks }) {
-    const [filterText, setFilterText] = useState('');
+function List({ tasks, setTasks }) {
+
 
     return (
         <div className='main'>
@@ -13,7 +13,7 @@ function List({ tasks }) {
                 {
                     tasks.map((task, i) => (
                         <li key={i}>
-                            <div className='completed'>
+                            <div className='completed' >
 
                                 <input className='toggle' type='checkbox' />
                                 <span>{task.taskTitle}</span>

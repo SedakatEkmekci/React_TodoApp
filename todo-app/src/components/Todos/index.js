@@ -17,7 +17,6 @@ function Tasks() {
     );
 
 
-
     useEffect(() => {
         console.log(tasks);
     }, [tasks]);

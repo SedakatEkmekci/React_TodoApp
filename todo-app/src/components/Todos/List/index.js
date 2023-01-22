@@ -14,8 +14,12 @@ function List({ tasks }) {
                     tasks.map((task, i) => (
                         <li key={i}>
                             <div className='completed'>
+
                                 <input className='toggle' type='checkbox' />
                                 <span>{task.taskTitle}</span>
+
+
+
 
                             </div>
 

@@ -14,6 +14,7 @@ function Form({ addTasks, tasks }) {
         console.log(form);
         e.preventDefault();
         if (form.taskTitle === '') {
+            console.log('Please enter a valid task')
             return false;
         }
         addTasks([...tasks, form]);

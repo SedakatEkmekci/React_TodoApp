@@ -29,7 +29,7 @@ function Todos() {
                 <h1>Todos</h1>
                 <Form addTodos={setTasks} tasks={tasks} />
             </div>
-            <div className="main">
+            <div>
                 <List tasks={tasks} />
             </div>
         </div>

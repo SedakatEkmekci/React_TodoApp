@@ -27,7 +27,7 @@ function Todos() {
         <div className='todoapp'>
             <div className='header'>
                 <h1>Todos</h1>
-                <Form tasks={tasks} />
+                <Form addTasks={setTasks} tasks={tasks} />
 
             </div>
             <div>

@@ -1,24 +1,19 @@
 import React from 'react';
 
-function List({ tasks }) {
+
+function List(tasks, setTasks) {
+
     return (
-        <section className="main">
-            <input className="toggle-all" type="checkbox" />
-            <label for="toggle-all">
-                Mark all as complete
-            </label>
-
-            <ul className="todo-list">
-                {
-                    tasks.map((tasks) => (
-                        <li>{tasks.taskTitle}</li>
-
-                    ))}
+        <div className='app'>
+            <ul>
+                {tasks.map((input, index) => {
+                    return (
+                        <li key={index}>{tasks.input}</li>
+                    )
+                })}
             </ul>
+        </div>
 
-
-
-        </section>
 
     )
 }

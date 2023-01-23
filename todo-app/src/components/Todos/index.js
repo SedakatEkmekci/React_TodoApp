@@ -8,12 +8,12 @@ function Todos() {
     const [tasks, setTasks] = useState([
         {
             taskTitle: 'Learn Javascript',
-            taskStatus: 'processing'
+
 
         },
         {
             taskTitle: 'Learn React',
-            taskStatus: 'completed'
+
         },
     ]
     );
@@ -27,10 +27,12 @@ function Todos() {
         <div className='todoapp'>
             <div className='header'>
                 <h1>Todos</h1>
-                <Form addTodos={setTasks} tasks={tasks} />
+                <Form tasks={tasks} />
+
             </div>
             <div>
-                <List tasks={tasks} />
+
+
             </div>
         </div>
     )

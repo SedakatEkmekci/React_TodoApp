@@ -1,36 +1,49 @@
 import { useState, useEffect } from 'react';
 
-const initialFormValues = { taskTitle: '' };
-
-function Form({ addTasks, tasks }) {
-    const [form, setForm] = useState(initialFormValues);
-
-    const onChangeInput = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
 
 
-    const onSubmit = (e) => {
-        console.log(form);
+function Form() {
+    const [formInput, setFormInput] =
+        useState([{ taskTitle: '', }
+        ])
+
+    const handleFormChange = (index, event) => {
+
+        let newData = [...formInput];
+        newData[index][event.target.name] = event.target.value;
+        setFormInput(newData);
+
+    }
+
+    const submit = (e) => {
         e.preventDefault();
-        if (form.taskTitle === '') {
-            console.log('Please enter a valid task')
-            return false;
-        }
-        addTasks([...tasks, form]);
-    };
+        console.log(formInput)
+    }
+
+
+
     return (
-        <form onSubmit={onSubmit}>
-            <div>
-                <input className='new-todo'
-                    name='taskTitle'
-                    placeholder='What needs to be done?'
-                    value={form.taskTitle}
-                    onChange={onChangeInput} />
+        <div>
+            <form onSubmit={submit}>
+                {formInput.map((input, index) => {
+                    return (
+                        <div key={index} className='new-todo'>
+                            <input
+                                placeholder='What needs to be done?'
+                                name='taskTitle'
+                                value={input.task}
+                                onChange={e => handleFormChange(index, e)}
+                                autoFocus />
+                            <br />
+                            <button onClick={submit}>Submit</button>
 
-            </div>
 
-        </form>
+                        </div>
+                    )
+                })}
+
+            </form>
+        </div>
     )
 };
 

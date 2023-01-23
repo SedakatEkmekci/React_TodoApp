@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import Form from './Form';
-import List from './List'
+
 
 function Tasks() {
     const [tasks, setTasks] = useState([
@@ -28,7 +28,7 @@ function Tasks() {
                 <h1>Todos</h1>
 
                 <Form addTodos={setTasks} tasks={tasks}></Form>
-                <List tasks={tasks}></List>
+
 
             </div>
 

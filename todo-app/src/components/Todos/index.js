@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Form from './Form';
 
 
-function Tasks() {
+function Todos() {
     const [tasks, setTasks] = useState([
         {
             taskTitle: 'Learn Javascript',
@@ -26,16 +26,10 @@ function Tasks() {
         <div className='todoapp'>
             <div className='header'>
                 <h1>Todos</h1>
-
                 <Form addTodos={setTasks} tasks={tasks}></Form>
-
-
             </div>
-
-
-
         </div>
     )
 }
 
-export default Tasks;
+export default Todos;

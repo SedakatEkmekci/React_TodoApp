@@ -1,24 +1,26 @@
 import { useState, useEffect } from 'react';
 
-
-
 function Form({ addTasks, tasks }) {
-    const [formInput, setFormInput] =
-        useState([{ taskTitle: '', }
-        ])
+    const [formInput, setFormInput] = useState([{ taskTitle: '', taskStatus: '' }]);
 
+    const toggle = (formInput, event) => {
+        let value = [...formInput];
+        console.log(event.target.value);
+        value[0][event.target.name] = event.target.value;
+        setFormInput(value);
+    };
     const handleFormChange = (formInput, event) => {
 
         let newData = [...formInput];
-        newData[formInput][event.target.name] = event.target.value;
+        newData[0][event.target.name] = event.target.value;
         setFormInput(newData);
 
-    }
+    };
 
     const submit = (e) => {
         e.preventDefault();
 
-        addTasks([...tasks, formInput]);
+        addTasks([formInput, ...tasks]);
         console.log(formInput);
 
     }
@@ -33,6 +35,11 @@ function Form({ addTasks, tasks }) {
                         name='taskTitle'
                         value={formInput.taskTitle}
                         onChange={e => handleFormChange(formInput, e)}
+                        autoFocus />
+                    <input type="text"
+                        name='taskStatus'
+                        value={formInput.taskStatus}
+                        onChange={e => toggle(formInput, e)}
                         autoFocus />
                     <br />
                     <button onClick={submit}>Add</button>

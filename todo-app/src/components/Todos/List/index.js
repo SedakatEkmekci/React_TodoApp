@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 function List({ tasks }) {
-    const [checked, setChecked] = useState([{ taskStatus: '' }]);
+
 
 
 
@@ -20,8 +20,8 @@ function List({ tasks }) {
                     tasks.map((item, index) => {
                         <li key={index} className='completed'>
                             <div className='view'>
-                                <input value={item} type="checkbox" onChange={handleCheck} />
-                                <span className={isChecked(item)}>{tasks.item}</span>
+                                <input value={item} type="checkbox" />
+                                <span >{tasks.item}</span>
                             </div>
                         </li>
                     })

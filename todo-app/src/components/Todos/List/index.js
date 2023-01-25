@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 
 
-function List({ tasks }) {
+function List({ tasks, IsCompeleted }) {
 
+    const [isChecked, setIsChecked] = useState({ taskStatus: '' });
+
+    const isCompleted = (event) => {
+        let value = tasks.map((tasks, i) => (
+            i = tasks.taskStatus
+        ));
+
+        console.log(value);
+        setIsChecked(!value);
+    }
 
 
     return (
@@ -25,6 +35,8 @@ function List({ tasks }) {
                                     value={tasks.taskStatus}
                                     className="toggle"
                                     type="checkbox"
+                                    checked={isChecked}
+                                    onClick={e => isCompleted(e)}
 
                                 />
                             </div>

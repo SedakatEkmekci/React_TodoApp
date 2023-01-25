@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react';
 
 function Form({ addTasks, tasks }) {
-    const [formInput, setFormInput] = useState([{ taskTitle: '', taskStatus: '' }]);
+    const [formInput, setFormInput] = useState('');
 
-    const handleFormChange = (formInput, event) => {
+    const handleFormChange = (event) => {
 
-        let newData = [...formInput];
-        newData[0][event.target.name] = event.target.value;
+        let newData = { taskTitle: '', taskStatus: '' };
+        newData[event.target.name] = event.target.value;
         setFormInput(newData);
     };
 
     const submit = (e) => {
         e.preventDefault();
-        addTasks([formInput, ...tasks]);
+        addTasks([...tasks, formInput]);
 
         console.log(formInput);
 
     }
     return (
         <div>
-            <form>
+            <form onSubmit={submit}>
 
 
                 <div className='new-todo'>
@@ -27,15 +27,10 @@ function Form({ addTasks, tasks }) {
                         placeholder='What needs to be done?'
                         name='taskTitle'
                         value={formInput.taskTitle}
-                        onChange={e => handleFormChange(formInput, e)}
+                        onChange={e => handleFormChange(e)}
                         autoFocus />
-                    <input
-                        placeholder='is it completed?'
-                        name='taskStatus'
-                        value={formInput.taskStatus}
-                        onChange={e => handleFormChange(formInput, e)}
-                        autoFocus />
-                    <button onClick={submit}>Add</button>
+
+
                 </div>
 
 

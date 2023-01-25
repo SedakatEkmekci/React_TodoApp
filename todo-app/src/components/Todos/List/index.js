@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 
 function List({ tasks }) {
 
+    const handleOnChecked = () => {
 
+
+    }
     return (
         <section className="main">
             <input className="toggle-all" type="checkbox" />
@@ -17,7 +20,10 @@ function List({ tasks }) {
                         <li className="completed" key={i}>
                             <div className="view">
                                 <span>{tasks.taskTitle}</span>
-                                <input className="toggle" type="checkbox" />
+                                <input
+                                    className="toggle"
+                                    type="checkbox"
+                                />
                             </div>
                         </li>
 

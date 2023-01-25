@@ -2,35 +2,24 @@ import { useState, useEffect } from 'react';
 
 function Form({ addTasks, tasks }) {
     const [formInput, setFormInput] = useState([{ taskTitle: '', taskStatus: '' }]);
-    const [isChecked, setIsChecked] = useState(false);
-
-
-    const handleOnChange = () => {
-        setIsChecked(!isChecked);
-        //console.log(isChecked);
-
-    };
 
     const handleFormChange = (formInput, event) => {
 
         let newData = [...formInput];
         newData[0][event.target.name] = event.target.value;
         setFormInput(newData);
-
-
     };
-
 
     const submit = (e) => {
         e.preventDefault();
         addTasks([formInput, ...tasks]);
 
-        //console.log(formInput);
+        console.log(formInput);
 
     }
     return (
         <div>
-            <form onSubmit={submit}>
+            <form>
 
 
                 <div className='new-todo'>
@@ -40,14 +29,13 @@ function Form({ addTasks, tasks }) {
                         value={formInput.taskTitle}
                         onChange={e => handleFormChange(formInput, e)}
                         autoFocus />
-                    <input type="checkbox"
+                    <input
+                        placeholder='is it completed?'
                         name='taskStatus'
                         value={formInput.taskStatus}
-                        onChange={handleOnChange}
-                        checked={isChecked}
+                        onChange={e => handleFormChange(formInput, e)}
                         autoFocus />
-
-
+                    <button onClick={submit}>Add</button>
                 </div>
 
 

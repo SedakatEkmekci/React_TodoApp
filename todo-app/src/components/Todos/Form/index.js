@@ -2,26 +2,30 @@ import { useState, useEffect } from 'react';
 
 function Form({ addTasks, tasks }) {
     const [formInput, setFormInput] = useState([{ taskTitle: '', taskStatus: '' }]);
+    const [isChecked, setIsChecked] = useState(false);
 
-    const toggle = (formInput, event) => {
-        let value = [...formInput];
-        console.log(event.target.value);
-        value[0][event.target.name] = event.target.value;
-        setFormInput(value);
+
+    const handleOnChange = () => {
+        setIsChecked(!isChecked);
+        //console.log(isChecked);
+
     };
+
     const handleFormChange = (formInput, event) => {
 
         let newData = [...formInput];
         newData[0][event.target.name] = event.target.value;
         setFormInput(newData);
 
+
     };
+
 
     const submit = (e) => {
         e.preventDefault();
-
         addTasks([formInput, ...tasks]);
-        console.log(formInput);
+
+        //console.log(formInput);
 
     }
     return (
@@ -36,13 +40,13 @@ function Form({ addTasks, tasks }) {
                         value={formInput.taskTitle}
                         onChange={e => handleFormChange(formInput, e)}
                         autoFocus />
-                    <input type="text"
+                    <input type="checkbox"
                         name='taskStatus'
                         value={formInput.taskStatus}
-                        onChange={e => toggle(formInput, e)}
+                        onChange={handleOnChange}
+                        checked={isChecked}
                         autoFocus />
-                    <br />
-                    <button onClick={submit}>Add</button>
+
 
                 </div>
 

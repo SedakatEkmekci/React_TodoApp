@@ -1,23 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
+function List({ tasks }) {
 
-function List({ tasks, IsCompeleted }) {
+    const [isChecked, setIsChecked] = useState('');
+    const [isCompleted, setIsCompleted] = useState([]);
 
-    const [isChecked, setIsChecked] = useState({ taskStatus: '' });
-
-    const isCompleted = (event) => {
-        let value = tasks.map((tasks, i) => (
-            i = tasks.taskStatus
-        ));
-
+    const handleOnChange = (event) => {
+        let value = tasks.map((tasks, i) => {
+            i = isCompleted;
+            return !i;
+        });
+        setIsCompleted(!value);
         console.log(value);
-        setIsChecked(!value);
-    }
+    };
+    const changeInput = (event) => {
+        let updatedList = [!event.target.value];
+
+        if (event.target.checked) {
+            updatedList = [event.target.value];
+        }
+
+        setIsChecked(updatedList);
+        console.log(updatedList);
+    };
+
 
 
     return (
         <section className="main">
-            <input className="toggle-all" type="checkbox" />
+            <input className="toggle-all"
+                type="checkbox"
+                name="completed"
+                value={tasks.taskStatus}
+                checked={isCompleted}
+                onChange={e => handleOnChange(e)}
+
+            />
             <label htmlFor="toggle-all">
                 Mark all as complete
             </label>
@@ -29,16 +47,21 @@ function List({ tasks, IsCompeleted }) {
                         <li className="completed" key={i} >
                             <div className="view">
                                 <span>{tasks.taskTitle}</span>
-                                <input
 
+
+                                <input
                                     name="taskStatus"
                                     value={tasks.taskStatus}
                                     className="toggle"
                                     type="checkbox"
-                                    checked={isChecked}
-                                    onClick={e => isCompleted(e)}
+                                    checked={i.isChecked}
+                                    onClick={e => changeInput(e)}
+
+
 
                                 />
+
+
                             </div>
                         </li>
 

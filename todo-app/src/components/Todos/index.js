@@ -8,7 +8,7 @@ function Todos() {
     const [tasks, setTasks] = useState([
         {
             taskTitle: 'Learn Javascript',
-            taskStatus: false
+            taskStatus: true
 
 
         },

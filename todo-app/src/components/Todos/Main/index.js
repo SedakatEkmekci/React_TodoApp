@@ -41,9 +41,6 @@ function Main({ tasks }) {
 
                         <li className="completed" key={i} >
                             <div className="view">
-                                <span>{tasks.taskTitle}</span>
-
-
                                 <input
                                     name="taskStatus"
                                     value={tasks.taskStatus}
@@ -52,17 +49,12 @@ function Main({ tasks }) {
                                     checked={isChecked}
                                     onChange={e => changeInput(e)}
                                 />
+                                <span>{tasks.taskTitle}</span>
                                 <button className='destroy'></button>
-
-
                             </div>
                         </li>
-
                     ))
-
                 }
-
-
             </ul>
         </section>
 

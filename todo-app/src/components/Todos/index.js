@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Header from './Header';
 import Main from './Main';
-
+import Footer from './Footer';
 
 function Todos() {
     const [tasks, setTasks] = useState([
@@ -31,6 +31,7 @@ function Todos() {
                 <h1>Todos</h1>
                 <Header addTasks={setTasks} tasks={tasks} />
                 <Main tasks={tasks} />
+                <Footer />
 
             </div>
             <div>

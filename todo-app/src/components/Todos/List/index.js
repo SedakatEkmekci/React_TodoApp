@@ -14,12 +14,9 @@ function List({ tasks }) {
         console.log(value);
     };
     const changeInput = (event) => {
-        let updatedList = [!event.target.value];
-
-        if (event.target.checked) {
-            updatedList = [event.target.value];
-        }
-
+        let updatedList = [event.target.checked];
+        console.log(updatedList);
+        updatedList = ![event.target.checked];
         setIsChecked(updatedList);
         console.log(updatedList);
     };
@@ -29,7 +26,7 @@ function List({ tasks }) {
     return (
         <section className="main">
             <input className="toggle-all"
-                type="checkbox"
+                type="radio"
                 name="completed"
                 value={tasks.taskStatus}
                 checked={isCompleted}
@@ -53,9 +50,9 @@ function List({ tasks }) {
                                     name="taskStatus"
                                     value={tasks.taskStatus}
                                     className="toggle"
-                                    type="checkbox"
-                                    checked={i.isChecked}
-                                    onClick={e => changeInput(e)}
+                                    type="radio"
+                                    checked={isChecked}
+                                    onChange={e => changeInput(e)}
 
 
 

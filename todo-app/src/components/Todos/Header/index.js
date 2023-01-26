@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function Form({ addTasks, tasks }) {
+function Header({ addTasks, tasks }) {
     const [formInput, setFormInput] = useState('');
 
     const handleFormChange = (event) => {
@@ -39,4 +39,4 @@ function Form({ addTasks, tasks }) {
     )
 };
 
-export default Form;
+export default Header;

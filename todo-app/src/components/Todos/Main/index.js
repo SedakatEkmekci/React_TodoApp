@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function List({ tasks }) {
+function Main({ tasks }) {
 
     const [isChecked, setIsChecked] = useState('');
     const [isCompleted, setIsCompleted] = useState([]);
@@ -70,4 +70,4 @@ function List({ tasks }) {
     )
 }
 
-export default List;
+export default Main;

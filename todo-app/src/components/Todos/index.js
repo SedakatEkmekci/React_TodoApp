@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
-import Form from './Form';
-import List from './List';
+import Header from './Header';
+import Main from './Main';
 
 
 function Todos() {
@@ -29,8 +29,8 @@ function Todos() {
         <div className='todoapp'>
             <div className='header'>
                 <h1>Todos</h1>
-                <Form addTasks={setTasks} tasks={tasks} />
-                <List tasks={tasks}></List>
+                <Header addTasks={setTasks} tasks={tasks} />
+                <Main tasks={tasks} />
 
             </div>
             <div>

@@ -21,8 +21,6 @@ function List({ tasks }) {
         console.log(updatedList);
     };
 
-
-
     return (
         <section className="main">
             <input className="toggle-all"
@@ -53,10 +51,8 @@ function List({ tasks }) {
                                     type="radio"
                                     checked={isChecked}
                                     onChange={e => changeInput(e)}
-
-
-
                                 />
+                                <button className='destroy'></button>
 
 
                             </div>

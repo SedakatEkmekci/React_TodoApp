@@ -24,12 +24,6 @@ function Main({ tasks, setTasks }) {
         console.log(updatedList);
     };
 
-    const handleDeleteField = (e, index) => {
-        const values = [...formValues];
-        values.splice(index, 1);
-        setFormValues(values);
-    };
-
     return (
         <section className="main">
             <input className="toggle-all"

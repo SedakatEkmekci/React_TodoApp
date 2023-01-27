@@ -1,12 +1,13 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-function Footer({ tasks }) {
+function Footer(props) {
+    const [inputs, setInputs] = useState();
+    console.log(inputs);
 
-    const [filter, setFilter] = useState('');
+    const deleteAll = (e,) => {
+        console.log("orginal array:" + inputs);
+    }
 
-    const filtered = tasks.filter((item) => {
-
-    })
 
 
 
@@ -25,7 +26,7 @@ function Footer({ tasks }) {
                     <a href="#/">Active</a>
                 </li>
                 <li>
-                    <a href="#/">Completed</a>
+                    <a onClick={deleteAll}>Completed</a>
                 </li>
             </ul>
 

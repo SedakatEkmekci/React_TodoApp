@@ -1,12 +1,6 @@
 import { useState } from 'react';
 
-function Footer(props) {
-    const [inputs, setInputs] = useState();
-    console.log(inputs);
-
-    const deleteAll = (e,) => {
-        console.log("orginal array:" + inputs);
-    }
+function Footer({ tasks }) {
 
 
 
@@ -26,7 +20,7 @@ function Footer(props) {
                     <a href="#/">Active</a>
                 </li>
                 <li>
-                    <a onClick={deleteAll}>Completed</a>
+                    <a >Completed</a>
                 </li>
             </ul>
 

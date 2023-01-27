@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-function Main({ tasks, addTasks }) {
+function Main({ tasks }) {
 
-
-
-    const [formValue, setFormValue] = useState(...tasks);
+    const [formValue, setFormValue] = useState([]);
 
     const selectAll = (event) => {
         let value = tasks.map((i) => {
@@ -32,8 +30,6 @@ function Main({ tasks, addTasks }) {
 
     };
 
-    console.log(tasks);
-
     return (
         <section className="main">
             <input className="toggle-all"
@@ -52,7 +48,7 @@ function Main({ tasks, addTasks }) {
                 {
                     tasks.map((tasks, i) => (
 
-                        <li className="completed" key={i} >
+                        <><li className="completed" key={i}>
 
                             <div className="view">
                                 <input
@@ -61,15 +57,14 @@ function Main({ tasks, addTasks }) {
                                     className="toggle"
                                     type="radio"
                                     checked=''
-                                    onChange={e => changeInput(e)}
+                                    onChange={e => changeInput(e)} />
 
-
-                                />
-
-                                <span > {tasks.taskTitle}</span>
-                                <button className='destroy' ></button>
+                                <span> {tasks.taskTitle}</span>
+                                <button className='destroy'></button>
                             </div>
                         </li>
+
+                        </>
                     ))
                 }
             </ul>

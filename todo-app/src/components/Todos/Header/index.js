@@ -10,7 +10,7 @@ function Header({ addTasks, tasks }) {
 
     const handleFormChange = (event) => {
 
-        let newData = { taskTitle: '', isDone: 'false' };
+        let newData = { taskTitle: '', isDone: false };
         newData[event.target.name] = event.target.value;
         setFormInput(newData);
     };

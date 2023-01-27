@@ -5,9 +5,6 @@ function Main({ tasks, setTasks }) {
     const [formValues, setFormValues] = useState('');
     const [isCompleted, setIsCompleted] = useState([]);
 
-
-
-
     const handleOnChange = (event) => {
         let value = tasks.map((tasks, i) => {
             i = isCompleted;

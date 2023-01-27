@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
 
+const initialFormValues = { taskTitle: '', taskStatus: '' }
 function Header({ addTasks, tasks }) {
-    const [formInput, setFormInput] = useState('');
+    const [formInput, setFormInput] = useState(initialFormValues);
+
+    useEffect(() => {
+        setFormInput(initialFormValues);
+    }, [tasks]);
 
     const handleFormChange = (event) => {
 

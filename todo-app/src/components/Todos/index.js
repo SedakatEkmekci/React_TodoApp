@@ -31,7 +31,9 @@ function Todos() {
                 <h1>Todos</h1>
                 <Header addTasks={setTasks} tasks={tasks} />
                 <Main tasks={tasks} />
-                <Footer />
+                <Footer>
+                </Footer>
+
 
             </div>
             <div>

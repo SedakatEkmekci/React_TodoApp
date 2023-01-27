@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-function Main({ tasks }) {
+function Main({ tasks, setTasks }) {
 
-    const [isChecked, setIsChecked] = useState('');
+    const [formValues, setFormValues] = useState('');
     const [isCompleted, setIsCompleted] = useState([]);
+
+
+
 
     const handleOnChange = (event) => {
         let value = tasks.map((tasks, i) => {
@@ -17,8 +20,14 @@ function Main({ tasks }) {
         let updatedList = [event.target.checked];
         console.log(updatedList);
         updatedList = ![event.target.checked];
-        setIsChecked(updatedList);
+        setFormValues(updatedList);
         console.log(updatedList);
+    };
+
+    const handleDeleteField = (e, index) => {
+        const values = [...formValues];
+        values.splice(index, 1);
+        setFormValues(values);
     };
 
     return (
@@ -46,17 +55,19 @@ function Main({ tasks }) {
                                     value={tasks.taskStatus}
                                     className="toggle"
                                     type="radio"
-                                    checked={isChecked}
-                                    onChange={e => changeInput(e)}
+                                    checked={formValues}
+                                    onChange={e => changeInput(e)
+
+                                    }
                                 />
                                 <span>{tasks.taskTitle}</span>
-                                <button className='destroy'></button>
+                                <button className='destroy' ></button>
                             </div>
                         </li>
                     ))
                 }
             </ul>
-        </section>
+        </section >
 
 
     )

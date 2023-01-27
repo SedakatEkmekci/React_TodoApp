@@ -7,12 +7,14 @@ import Footer from './Footer';
 function Todos() {
     const [tasks, setTasks] = useState([
         {
+
             taskTitle: 'Learn Javascript',
             isDone: false
 
 
         },
         {
+
             taskTitle: 'Learn React',
             isDone: false
 
@@ -30,7 +32,7 @@ function Todos() {
             <div className='header'>
                 <h1>Todos</h1>
                 <Header addTasks={setTasks} tasks={tasks} />
-                <Main tasks={tasks} />
+                <Main addTasks={setTasks} tasks={tasks} />
                 <Footer>
                 </Footer>
 

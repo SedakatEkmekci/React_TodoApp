@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const initialFormValues = { taskTitle: '', taskStatus: '' }
+const initialFormValues = { taskTitle: '', isDone: '' }
 function Header({ addTasks, tasks }) {
     const [formInput, setFormInput] = useState(initialFormValues);
 
@@ -10,7 +10,7 @@ function Header({ addTasks, tasks }) {
 
     const handleFormChange = (event) => {
 
-        let newData = { taskTitle: '', taskStatus: '' };
+        let newData = { taskTitle: '', isDone: 'false' };
         newData[event.target.name] = event.target.value;
         setFormInput(newData);
     };

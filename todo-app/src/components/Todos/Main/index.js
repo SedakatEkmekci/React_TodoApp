@@ -1,34 +1,47 @@
 import React, { useEffect, useState } from 'react';
 
-function Main({ tasks, setTasks }) {
+function Main({ tasks, addTasks }) {
 
-    const [formValues, setFormValues] = useState('');
-    const [isCompleted, setIsCompleted] = useState([]);
 
-    const handleOnChange = (event) => {
-        let value = tasks.map((tasks, i) => {
-            i = isCompleted;
-            return !i;
+
+    const [formValue, setFormValue] = useState(...tasks);
+
+    const selectAll = (event) => {
+        let value = tasks.map((i) => {
+            i = [event.target.value];
+            console.log(i);
+            return i = true;
         });
-        setIsCompleted(!value);
-        console.log(value);
+        setFormValue(value);
+        console.log('All task are selected', value);
     };
+
     const changeInput = (event) => {
-        let updatedList = [event.target.checked];
-        console.log(updatedList);
-        updatedList = ![event.target.checked];
-        setFormValues(updatedList);
-        console.log(updatedList);
+        let check = [event.target.checked];
+        let input = [event.target.value];
+
+        if (check = true) {
+            console.log('succes');
+            input = true;
+            setFormValue([...tasks, input]);
+            console.log(input)
+        }
+        else {
+            console.log('the task is already done');
+        }
+
     };
+
+    console.log(tasks);
 
     return (
         <section className="main">
             <input className="toggle-all"
                 type="radio"
                 name="completed"
-                value={tasks.taskStatus}
-                checked={isCompleted}
-                onChange={e => handleOnChange(e)}
+                value={formValue.isDone}
+                checked=''
+                onChange={e => selectAll(e)}
 
             />
             <label htmlFor="toggle-all">
@@ -40,18 +53,20 @@ function Main({ tasks, setTasks }) {
                     tasks.map((tasks, i) => (
 
                         <li className="completed" key={i} >
+
                             <div className="view">
                                 <input
-                                    name="taskStatus"
-                                    value={tasks.taskStatus}
+                                    name="isDone"
+                                    value={formValue.isDone}
                                     className="toggle"
                                     type="radio"
-                                    checked={formValues}
-                                    onChange={e => changeInput(e)
+                                    checked=''
+                                    onChange={e => changeInput(e)}
 
-                                    }
+
                                 />
-                                <span>{tasks.taskTitle}</span>
+
+                                <span > {tasks.taskTitle}</span>
                                 <button className='destroy' ></button>
                             </div>
                         </li>

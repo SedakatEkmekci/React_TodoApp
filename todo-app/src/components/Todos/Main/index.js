@@ -42,7 +42,7 @@ function Main({ tasks }) {
                 {
                     tasks.map((tasks, i) => (
 
-                        <><li className="completed" key={i}>
+                        <><li className="completed" key={tasks.i}>
 
                             <div className="view">
                                 <input

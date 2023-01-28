@@ -2,33 +2,27 @@ import React, { useEffect, useState } from 'react';
 
 function Main({ tasks }) {
 
-    const [formValue, setFormValue] = useState([]);
+    const [formValue, setFormValue] = useState(...tasks);
+    const [isChecked, setisChecked] = useState('');
 
     const selectAll = (event) => {
         let value = tasks.map((i) => {
-            i = [event.target.value];
             console.log(i);
-            return i = true;
+            i.isDone = true;
         });
         setFormValue(value);
-        console.log('All task are selected', value);
+        setisChecked(!isChecked);
+        console.log('All inputs are selected', tasks);
     };
 
-    const changeInput = (event) => {
-        let check = [event.target.checked];
-        let input = [event.target.value];
+    const changeInput = (event, i) => {
+        tasks[i].isDone = true;
+        setFormValue([...tasks, tasks[i]]);
 
-        if (check = true) {
-            console.log('succes');
-            input = true;
-            setFormValue([...tasks, input]);
-            console.log(input)
-        }
-        else {
-            console.log('the task is already done');
-        }
-
+        console.log(tasks);
     };
+
+
 
     return (
         <section className="main">
@@ -36,7 +30,7 @@ function Main({ tasks }) {
                 type="radio"
                 name="completed"
                 value={formValue.isDone}
-                checked=''
+                checked={isChecked}
                 onChange={e => selectAll(e)}
 
             />
@@ -55,9 +49,9 @@ function Main({ tasks }) {
                                     name="isDone"
                                     value={formValue.isDone}
                                     className="toggle"
-                                    type="radio"
-                                    checked=''
-                                    onChange={e => changeInput(e)} />
+                                    type="checkbox"
+                                    checked={isChecked}
+                                    onChange={e => changeInput(e, i)} />
 
                                 <span> {tasks.taskTitle}</span>
                                 <button className='destroy'></button>

@@ -1,14 +1,25 @@
 import { useState } from 'react';
 
 function Footer({ tasks, setTasks }) {
-    const [selected, setSelected] = useState('selected', '', '');
 
     const clearAll = (e) => {
-        setTasks(tasks.filter((tasks) => tasks.isDone === true));
+        setTasks(tasks.filter((tasks) => tasks.isDone === false));
+    };
+
+    const selectedButton = (e) => {
+        if (e.target.id === 'All') {
+            setTasks(tasks);
+            console.log('All tasks are showed:', tasks);
+        };
+        if (e.target.id === 'Active') {
+            setTasks(tasks.filter((tasks) => tasks.isDone === false));
+            console.log('Active tasks are showed:', tasks);
+        };
+        if (e.target.id === 'Completed') {
+            setTasks(tasks.filter((tasks) => tasks.isDone === true));
+            console.log('Completed tasks are showed:', tasks);
+        };
     }
-
-
-
 
 
 
@@ -17,13 +28,13 @@ function Footer({ tasks, setTasks }) {
 
             <ul className="filters">
                 <li>
-                    <span className="selected">All</span>
+                    <span onClick={selectedButton} id='All'>All</span>
                 </li>
                 <li>
-                    <a>Active</a>
+                    <span onClick={selectedButton} id='Active'>Active</span>
                 </li>
                 <li>
-                    <a >Completed</a>
+                    <span onClick={selectedButton} id='Completed'>Completed</span>
                 </li>
 
             </ul>

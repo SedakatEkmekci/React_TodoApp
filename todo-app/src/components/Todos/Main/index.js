@@ -22,20 +22,11 @@ function Main({ tasks, setTasks }) {
         console.log(tasks);
     };
 
-    const deleteItem = (e, i) => {
-        const removedItem = tasks[i];
-        console.log(tasks[i]);
-        tasks.splice(removedItem, 0)
-        console.log(removedItem);
+    const deleteItem = (i) => {
+        let removedItem = tasks[i].id - 1;
+        tasks.splice(removedItem, 1);
         setFormValue([...tasks, tasks[i]]);
-
-
     };
-
-
-
-
-
 
     return (
         <section className="main">
@@ -54,7 +45,7 @@ function Main({ tasks, setTasks }) {
                 {
                     tasks.map((tasks, i) => (
 
-                        <><li className="completed" key={i}>
+                        <><li className="completed" key={tasks.id}>
 
                             <div className="view">
                                 <input

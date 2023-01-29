@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-function Footer({ tasks }) {
+function Footer({ tasks, setTasks, setStatus }) {
+    const [selected, setSelected] = useState('selected', '', '');
+
 
 
 
@@ -13,7 +15,7 @@ function Footer({ tasks }) {
 
             <ul className="filters">
                 <li>
-                    <span onClick={selectAll} className="selected">All</span>
+                    <span className="selected">All</span>
                 </li>
                 <li>
                     <a>Active</a>

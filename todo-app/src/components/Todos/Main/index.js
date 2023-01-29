@@ -5,7 +5,7 @@ function Main({ tasks, setTasks }) {
     const [formValue, setFormValue] = useState(...tasks);
 
 
-    const selectAll = (event) => {
+    const selectAll = () => {
         let value = tasks.map((i) => {
             console.log(i);
             i.isDone = true;
@@ -15,16 +15,22 @@ function Main({ tasks, setTasks }) {
         console.log('All inputs are selected', tasks);
     };
 
-    const changeInput = (event, i) => {
+    const changeInput = (i) => {
         tasks[i].isDone = true;
         setFormValue([...tasks, tasks[i]]);
 
         console.log(tasks);
     };
 
+    const deleteItem = (e, i) => {
+        const removedItem = tasks[i];
+        console.log(tasks[i]);
+        tasks.splice(removedItem, 0)
+        console.log(removedItem);
+        setFormValue([...tasks, tasks[i]]);
 
 
-
+    };
 
 
 
@@ -37,7 +43,7 @@ function Main({ tasks, setTasks }) {
                 type="radio"
                 name="completed"
                 value={formValue.isDone}
-                onChange={e => selectAll(e)}
+                onChange={selectAll}
 
             />
             <label htmlFor="toggle-all">
@@ -56,10 +62,10 @@ function Main({ tasks, setTasks }) {
                                     value={formValue.isDone}
                                     className="toggle"
                                     type="checkbox"
-                                    onChange={e => changeInput(e, i)} />
+                                    onChange={e => changeInput(i)} />
 
                                 <span> {tasks.taskTitle}</span>
-                                <button className='destroy'>X</button>
+                                <button className='destroy' onClick={e => deleteItem(i)}>X</button>
                             </div>
                         </li>
 

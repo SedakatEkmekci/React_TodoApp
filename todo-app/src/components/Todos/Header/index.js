@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const initialFormValues = { taskTitle: '', isDone: '' }
+
 function Header({ addTasks, tasks }) {
     const [formInput, setFormInput] = useState(initialFormValues);
 
@@ -10,23 +11,25 @@ function Header({ addTasks, tasks }) {
 
     const handleFormChange = (event) => {
 
-        let newData = { taskTitle: '', isDone: false };
+        let newData = { taskTitle: '', isDone: false }
         newData[event.target.name] = event.target.value;
         setFormInput(newData);
+
     };
 
     const submit = (e) => {
         e.preventDefault();
-        addTasks([...tasks, formInput]);
-
         console.log(formInput);
-
+        if (formInput.taskTitle !== '') {
+            addTasks([...tasks, formInput]);
+        }
+        else {
+            console.log('please enter a valid task');
+        }
     }
     return (
         <div>
             <form onSubmit={submit}>
-
-
                 <div className='new-todo'>
                     <input
                         placeholder='What needs to be done?'
@@ -34,8 +37,6 @@ function Header({ addTasks, tasks }) {
                         value={formInput.taskTitle}
                         onChange={e => handleFormChange(e)}
                         autoFocus />
-
-
                 </div>
 
 

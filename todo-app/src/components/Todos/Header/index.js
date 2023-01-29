@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const initialFormValues = { taskTitle: '', isDone: '' }
+const initialFormValues = { id: '', taskTitle: '', isDone: '' }
 
 function Header({ addTasks, tasks }) {
     const [formInput, setFormInput] = useState(initialFormValues);
@@ -11,7 +11,7 @@ function Header({ addTasks, tasks }) {
 
     const handleFormChange = (event) => {
 
-        let newData = { taskTitle: '', isDone: false }
+        let newData = { id: '', taskTitle: '', isDone: false }
         newData[event.target.name] = event.target.value;
         setFormInput(newData);
 
@@ -19,8 +19,8 @@ function Header({ addTasks, tasks }) {
 
     const submit = (e) => {
         e.preventDefault();
-        console.log(formInput);
         if (formInput.taskTitle !== '') {
+            formInput.id = tasks.length + 1;
             addTasks([...tasks, formInput]);
         }
         else {

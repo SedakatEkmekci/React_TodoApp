@@ -7,14 +7,14 @@ import Footer from './Footer';
 function Todos() {
     const [tasks, setTasks] = useState([
         {
-
+            id: 1,
             taskTitle: 'Learn Javascript',
             isDone: false
 
 
         },
         {
-
+            id: 2,
             taskTitle: 'Learn React',
             isDone: false
 

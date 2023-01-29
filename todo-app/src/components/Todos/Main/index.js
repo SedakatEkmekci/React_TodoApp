@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-function Main({ tasks }) {
+function Main({ tasks, setTasks }) {
 
     const [formValue, setFormValue] = useState(...tasks);
-    const [isChecked, setisChecked] = useState('');
+
 
     const selectAll = (event) => {
         let value = tasks.map((i) => {
@@ -11,7 +11,7 @@ function Main({ tasks }) {
             i.isDone = true;
         });
         setFormValue(value);
-        setisChecked(!isChecked);
+
         console.log('All inputs are selected', tasks);
     };
 
@@ -24,13 +24,19 @@ function Main({ tasks }) {
 
 
 
+
+
+
+
+
+
+
     return (
         <section className="main">
             <input className="toggle-all"
                 type="radio"
                 name="completed"
                 value={formValue.isDone}
-                checked={isChecked}
                 onChange={e => selectAll(e)}
 
             />
@@ -42,7 +48,7 @@ function Main({ tasks }) {
                 {
                     tasks.map((tasks, i) => (
 
-                        <><li className="completed" key={tasks.i}>
+                        <><li className="completed" key={i}>
 
                             <div className="view">
                                 <input
@@ -50,11 +56,10 @@ function Main({ tasks }) {
                                     value={formValue.isDone}
                                     className="toggle"
                                     type="checkbox"
-                                    checked={isChecked}
                                     onChange={e => changeInput(e, i)} />
 
                                 <span> {tasks.taskTitle}</span>
-                                <button className='destroy'></button>
+                                <button className='destroy'>X</button>
                             </div>
                         </li>
 

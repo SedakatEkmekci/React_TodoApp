@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
-function Footer({ tasks, setTasks, setStatus }) {
+function Footer({ tasks, setTasks }) {
     const [selected, setSelected] = useState('selected', '', '');
 
     const clearAll = (e) => {
         setTasks(tasks.filter((tasks) => tasks.isDone === true));
     }
+
 
 
 

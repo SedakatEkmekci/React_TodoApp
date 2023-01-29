@@ -30,6 +30,7 @@ function Main({ tasks, setTasks }) {
 
 
 
+
     return (
         <section className="main">
             <input className="toggle-all"

@@ -34,7 +34,7 @@ function Todos() {
                 <h1>Todos</h1>
                 <Header addTasks={setTasks} tasks={tasks} />
                 <Main addTasks={setTasks} tasks={tasks} />
-                <Footer tasks={tasks} setTasks={setTasks} setStatus={setStatus} />
+                <Footer tasks={tasks} setTasks={setTasks} />
 
 
 

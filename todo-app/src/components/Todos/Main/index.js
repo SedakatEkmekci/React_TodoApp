@@ -59,7 +59,7 @@ function Main({ tasks, setTasks }) {
                                     onChange={e => changeInput(i)} />
 
                                 <span> {tasks.taskTitle}</span>
-                                <button className='destroy' onClick={e => deleteItem(e)}>X</button>
+                                <button className='destroy' onClick={e => deleteItem(i)}>X</button>
                             </div>
                         </li>
 

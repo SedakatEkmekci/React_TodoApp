@@ -21,7 +21,7 @@ function Todos() {
         },
     ]
     );
-    const [status, setStatus] = useState("all");
+
 
 
     useEffect(() => {

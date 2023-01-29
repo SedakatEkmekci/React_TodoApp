@@ -3,7 +3,7 @@ import { useState } from 'react';
 function Footer({ tasks, setTasks }) {
 
     const clearAll = (e) => {
-        setTasks(tasks.filter((tasks) => tasks.isDone === false));
+        setTasks(tasks.filter((tasks) => tasks.isDone === ''));
     };
 
     const selectedButton = (e) => {

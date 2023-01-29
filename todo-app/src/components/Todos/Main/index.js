@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function Main({ tasks, setTasks }) {
+function Main({ tasks }) {
 
     const [formValue, setFormValue] = useState(...tasks);
 
@@ -27,6 +27,7 @@ function Main({ tasks, setTasks }) {
         tasks.splice(removedItem, 1);
         setFormValue([...tasks, tasks[i]]);
     };
+
 
     return (
         <section className="main">

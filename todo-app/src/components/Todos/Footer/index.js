@@ -5,6 +5,7 @@ function Footer({ tasks }) {
 
 
 
+
     return (
         <footer className="footer">
             <span className="todo-count">
@@ -24,7 +25,7 @@ function Footer({ tasks }) {
                 </li>
             </ul>
 
-            <button className="clear-completed">
+            <button className="clear-completed" >
                 Clear completed
             </button>
         </footer>

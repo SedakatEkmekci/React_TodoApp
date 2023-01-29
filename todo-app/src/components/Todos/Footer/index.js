@@ -6,29 +6,33 @@ function Footer({ tasks }) {
 
 
 
-    return (
-        <footer className="footer">
-            <span className="todo-count">
 
-                items left
-            </span>
+
+    return (
+        <section className="footer">
 
             <ul className="filters">
                 <li>
-                    <a href="#/" className="selected">All</a>
+                    <span onClick={selectAll} className="selected">All</span>
                 </li>
                 <li>
-                    <a href="#/">Active</a>
+                    <a>Active</a>
                 </li>
                 <li>
                     <a >Completed</a>
                 </li>
-            </ul>
 
+            </ul>
             <button className="clear-completed" >
                 Clear completed
             </button>
-        </footer>
+            <footer className="info">
+                <p>Click to edit a todo</p>
+                <p>Created by <a href="https://github.com/SedakatEkmekci">Sedakat Ekmekçi</a></p>
+                <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+            </footer>
+        </section>
+
 
     )
 

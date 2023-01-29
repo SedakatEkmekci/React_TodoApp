@@ -4,8 +4,7 @@ function Main({ tasks }) {
 
     const [formValue, setFormValue] = useState(...tasks);
 
-
-    const selectAll = () => {
+    const completeAll = () => {
         let value = tasks.map((i) => {
             console.log(i);
             i.isDone = true;
@@ -35,7 +34,7 @@ function Main({ tasks }) {
                 type="radio"
                 name="completed"
                 value={formValue.isDone}
-                onChange={selectAll}
+                onChange={completeAll}
 
             />
             <label htmlFor="toggle-all">
@@ -61,10 +60,13 @@ function Main({ tasks }) {
                             </div>
                         </li>
 
+
                         </>
                     ))
                 }
             </ul>
+
+
         </section >
 
 

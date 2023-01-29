@@ -21,12 +21,13 @@ function Main({ tasks, setTasks }) {
         console.log(tasks);
     };
 
-    const deleteItem = (i) => {
+    const deleteItem = (index) => {
+        let keep = tasks[index];
+        const removedItem = tasks.filter((e) => e !== keep);
+        tasks.splice(index, 1);
+        setFormValue([...tasks, removedItem]);
 
-        let removedItem = tasks[i].id - 1;
-        tasks.splice(removedItem, 1);
-        setFormValue([...tasks, tasks[i]]);
-    }
+    };
 
 
 

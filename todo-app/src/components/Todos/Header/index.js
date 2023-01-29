@@ -28,7 +28,7 @@ function Header({ addTasks, tasks }) {
         }
     }
     return (
-        <div>
+        <div className='form'>
             <form onSubmit={submit}>
                 <div className='new-todo'>
                     <input

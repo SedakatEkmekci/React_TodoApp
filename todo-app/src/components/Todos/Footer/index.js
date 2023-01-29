@@ -1,14 +1,16 @@
 import { useState } from 'react';
 
 function Footer({ tasks, setTasks }) {
+    const [visible, setVisible] = useState(false);
 
     const clearAll = (e) => {
+        e.preventDefault();
         setTasks(tasks.filter((tasks) => tasks.isDone === ''));
     };
 
     const selectedButton = (e) => {
         if (e.target.id === 'All') {
-            setTasks(tasks);
+
             console.log('All tasks are showed:', tasks);
         };
         if (e.target.id === 'Active') {
@@ -19,9 +21,7 @@ function Footer({ tasks, setTasks }) {
             setTasks(tasks.filter((tasks) => tasks.isDone === true));
             console.log('Completed tasks are showed:', tasks);
         };
-    }
-
-
+    };
 
     return (
         <section className="footer">

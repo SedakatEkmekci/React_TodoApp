@@ -3,8 +3,9 @@ import { useState } from 'react';
 function Footer({ tasks, setTasks, setStatus }) {
     const [selected, setSelected] = useState('selected', '', '');
 
-
-
+    const clearAll = (e) => {
+        setTasks(tasks.filter((tasks) => tasks.isDone === true));
+    }
 
 
 
@@ -25,7 +26,7 @@ function Footer({ tasks, setTasks, setStatus }) {
                 </li>
 
             </ul>
-            <button className="clear-completed" >
+            <button className="clear-completed" onClick={clearAll} >
                 Clear completed
             </button>
             <footer className="info">

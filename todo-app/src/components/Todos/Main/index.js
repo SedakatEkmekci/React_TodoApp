@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function Main({ tasks }) {
+function Main({ tasks, setTasks }) {
 
     const [formValue, setFormValue] = useState(...tasks);
 
@@ -22,10 +22,12 @@ function Main({ tasks }) {
     };
 
     const deleteItem = (i) => {
+
         let removedItem = tasks[i].id - 1;
         tasks.splice(removedItem, 1);
         setFormValue([...tasks, tasks[i]]);
-    };
+    }
+
 
 
     return (
@@ -56,7 +58,7 @@ function Main({ tasks }) {
                                     onChange={e => changeInput(i)} />
 
                                 <span> {tasks.taskTitle}</span>
-                                <button className='destroy' onClick={e => deleteItem(i)}>X</button>
+                                <button className='destroy' onClick={e => deleteItem(e)}>X</button>
                             </div>
                         </li>
 

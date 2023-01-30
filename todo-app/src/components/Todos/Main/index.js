@@ -40,8 +40,9 @@ function Main({ tasks, setTasks }) {
                 value={formValue.isDone}
                 onChange={completeAll}
 
+
             />
-            <label htmlFor="toggle-all">
+            <label className="toggle-all">
                 Mark all as complete
             </label>
 
@@ -60,7 +61,7 @@ function Main({ tasks, setTasks }) {
                                     onChange={e => changeInput(i)} />
 
                                 <span> {tasks.taskTitle}</span>
-                                <button className='destroy' onClick={e => deleteItem(i)}>X</button>
+                                <button className='destroy' onClick={e => deleteItem(i)}></button>
                             </div>
                         </li>
 

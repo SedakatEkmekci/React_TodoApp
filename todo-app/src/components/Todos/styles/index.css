@@ -5,22 +5,6 @@ body {
     padding: 0;
 }
 
-button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: none;
-    font-size: 100%;
-    vertical-align: baseline;
-    font-family: inherit;
-    font-weight: inherit;
-    color: inherit;
-    -webkit-appearance: none;
-    appearance: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 body {
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.4em;
@@ -34,14 +18,10 @@ body {
     font-weight: 300;
 }
 
-.todoapp {
-    background: #fff;
-    margin: 130px 0 40px 0;
-    position: relative;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
-        0 25px 50px 0 rgba(0, 0, 0, 0.1);
+button {
+    background: none;
+    border: none;
 }
-
 
 .todoapp h1 {
     position: absolute;
@@ -51,27 +31,38 @@ body {
     font-weight: 100;
     text-align: center;
     color: rgba(175, 47, 47, 0.15);
-    -webkit-text-rendering: optimizeLegibility;
-    -moz-text-rendering: optimizeLegibility;
-    text-rendering: optimizeLegibility;
+
+}
+
+.todoapp {
+    background: #fff;
+    margin: 130px 0 40px 0;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+        0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+
+.new-todo {
+    padding: 16px 16px 16px 10px;
+    border: none;
 }
 
 .new-todo input {
-    margin: 10px;
     position: relative;
-    padding: 0;
+    margin: 0;
+    width: 100%;
     font-size: 24px;
-    font-family: inherit;
-    font-weight: inherit;
-    line-height: 1.4em;
-    color: inherit;
-    border: none;
-    background: rgba(0, 0, 0, 0.003);
+    padding: 0;
+    border: 0;
 }
 
-.toggle-all+label {
+.toggle-all {
     font-size: 20px;
-    padding: auto;
+    font-family: inherit;
+    font-weight: inherit;
+    margin: 20px 0 0 10px;
 }
 
 .main {
@@ -86,50 +77,33 @@ body {
 
 }
 
-
-
-
-
-
-.todo-list li label {
-
-    padding: 0;
+.view {
     display: block;
+    padding: 0;
+}
 
+.todo-list li {
+    word-break: break-all;
+    padding: 0px;
+    display: block;
+    line-height: 1.2;
     transition: color 0.4s;
 }
 
-.todo-list li.completed label {
-    color: #d9d9d9;
-    text-decoration: line-through;
-}
-
-.todo-list li .destroy {
-    display: inline-block;
-    position: absolute;
-
-    right: 10px;
-
-
-
+.todo-list .destroy {
+    display: inline-flex;
+    border: 0;
     font-size: 30px;
     color: #cc9a9a;
-
-
 }
 
-
+.todo-list li .destroy:hover {
+    color: #af5b5e;
+}
 
 .todo-list li .destroy:after {
     content: '×';
 }
-
-
-.todo-list li .edit {
-    display: none;
-}
-
-
 
 .footer {
     color: #777;
@@ -137,21 +111,6 @@ body {
     height: 20px;
     text-align: center;
     border-top: 1px solid #e6e6e6;
-}
-
-.footer:before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 50px;
-    overflow: hidden;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
-        0 8px 0 -3px #f6f6f6,
-        0 9px 1px -3px rgba(0, 0, 0, 0.2),
-        0 16px 0 -6px #f6f6f6,
-        0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
 
 .todo-count {
@@ -176,22 +135,21 @@ body {
     display: inline;
 }
 
-.filters li a {
+.filters li span {
     color: inherit;
-    margin: 3px;
     padding: 3px 7px;
     text-decoration: none;
     border: 1px solid transparent;
     border-radius: 3px;
     cursor: pointer;
-    /* Because of Mavo: we don't use the href attribute in such situations */
+
 }
 
-.filters li a:hover {
+.filters li span:hover {
     border-color: rgba(175, 47, 47, 0.1);
 }
 
-.filters li a.selected {
+.filters li span.selected {
     border-color: rgba(175, 47, 47, 0.2);
 }
 
@@ -209,7 +167,7 @@ html .clear-completed:active {
 }
 
 .info {
-    margin: 65px auto 0;
+    margin: 50px auto 0;
     color: #bfbfbf;
     font-size: 10px;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);

@@ -57,7 +57,7 @@ function Main({ tasks, setTasks }) {
                                     name="isDone"
                                     value={formValue.isDone}
                                     className="toggle"
-                                    type="checkbox"
+                                    type="radio"
                                     onChange={e => changeInput(i)} />
 
                                 <span> {tasks.taskTitle}</span>

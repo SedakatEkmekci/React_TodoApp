@@ -25,6 +25,9 @@ function Footer({ tasks, setTasks }) {
 
     return (
         <section className="footer">
+            <span class="todo-count">
+                {tasks.length} items left
+            </span>
 
             <ul className="filters">
                 <li>
